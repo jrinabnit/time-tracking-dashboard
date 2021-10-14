@@ -1,5 +1,5 @@
 const theme = {
-  breakpoints: ["@media (max-width: 400px)"],
+  breakpoints: ["@media (min-width: 400px)"],
   fonts: {
     body: "Rubik",
     heading: "Rubik",
@@ -20,10 +20,10 @@ const theme = {
     },
   text: {
     heading1: {
-      fontSize: [60],
+      fontSize: 36,
     },
     heading2: {
-      fontSize: [22],
+      fontSize: [26, 36],
     },
     paragraph: {
       fontSize: [18],
