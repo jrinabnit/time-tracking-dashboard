@@ -10,32 +10,32 @@ import SocialImg from "../assets/svgs/icon-social.svg";
 import SelfCareImg from "../assets/svgs/icon-self-care.svg";
 
 
-const TimeCard = ({title, timeframes, index}) => {
+const TimeCard = ( {title, timeframes, index, value: {frequency}}) => {
 
 const styles = [
   {
     bg: "red100",
-    src: {WorkImg},
+    src: WorkImg,
   },
   {
     bg: "blue600",
-    src: {PlayImg},
+    src: PlayImg,
   },
   {
     bg: "red200",
-    src: {StudyImg}
+    src: StudyImg,
   },
   {
     bg: "green100",
-    src: {ExerciseImg}
+    src: ExerciseImg,
   },
   {
     bg: "violet100",
-    src: {SocialImg}
+    src: SocialImg,
   },
   {
     bg: "orange100",
-    src: {SelfCareImg}
+    src: SelfCareImg,
   },
 ]
 
@@ -56,6 +56,8 @@ const monthlyPrev = timeframes.monthly.previous
       }}
     >
       <Image
+        src= {styles[index].src}
+        a={console.log(styles[0].src)}
         sx={{
           pl: "70%",
           mb: "-15%",
@@ -88,18 +90,21 @@ const monthlyPrev = timeframes.monthly.previous
             display: "flex",
             flexDirection: ["row", "column"],
             justifyContent: "space-between",
-            
             p: 20,
           }}
         >
           <Heading variant="heading1">
-          {dailyCurr}
-          
-          
+          {frequency === 'daily' && dailyCurr}
+          {frequency === 'weekly' && weeklyCurr}
+          {frequency === 'monthly' && monthlyCurr}
           </Heading>
           <Paragraph>
-          Last Week - {dailyPrev}
-          {/* {3 options} */}
+          {frequency === 'daily' && 'Yesterday'}
+          {frequency === 'weekly' && 'Last Week'}
+          {frequency === 'monthly' && 'Last Month'}
+          {' '} - {' '} {frequency === 'daily' && dailyPrev}
+          {frequency === 'weekly' && weeklyPrev}
+          {frequency === 'monthly' && monthlyPrev}
           </Paragraph>
         </Box>
       </Box>

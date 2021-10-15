@@ -4,16 +4,26 @@ import { Heading, Paragraph, Box, Image } from "theme-ui";
 import ProfilePic from "../assets/image-jeremy.png";
 
 
-function handleClick(){
-  
+
+
+
+const ProfileCard = ({ value: { frequency, setFrequency } }) => {
+
+function handleChange(){
+
+
 }
 
-const ProfileCard = () => {
+
+
+
+
   return (
     <Box
+      a={console.log(setFrequency)}
       sx={{
         bg: "blue300",
-        maxWidth: ['350px', '250px'],
+        maxWidth: ["350px", "250px"],
         borderRadius: "16px",
       }}
     >
@@ -32,7 +42,7 @@ const ProfileCard = () => {
             border: "2px solid white",
             width: "80px",
             height: "auto",
-            m: [20, 30]
+            m: [20, 30],
           }}
         />
         <Box
@@ -41,7 +51,6 @@ const ProfileCard = () => {
             flexDirection: "column",
             justifyContent: "center",
             my: 20,
-        
           }}
         >
           <Paragraph
@@ -51,11 +60,13 @@ const ProfileCard = () => {
           >
             Report for
           </Paragraph>
-          <Heading variant="heading2" 
-            sx={{ 
+          <Heading
+            variant="heading2"
+            sx={{
               mx: [10, 30],
               mb: [0, 40],
-              }}>
+            }}
+          >
             Jeremy Robson
           </Heading>
         </Box>
@@ -68,9 +79,19 @@ const ProfileCard = () => {
           m: 30,
         }}
       >
-        <Paragraph sx={{ my: 2 }} onClick={handleClick} >Daily</Paragraph>
-        <Paragraph sx={{ my: 2 }}>Weekly</Paragraph>
-        <Paragraph sx={{ my: 2 }}>Monthly</Paragraph>
+        <Paragraph 
+          sx={{ 
+            my: 2,
+    
+         }} onClick={() => setFrequency("daily")}>
+          Daily
+        </Paragraph>
+        <Paragraph sx={{ my: 2 }} onClick={() => setFrequency("weekly")}>
+          Weekly
+        </Paragraph>
+        <Paragraph sx={{ my: 2 }} onClick={() => setFrequency("monthly")}>
+          Monthly
+        </Paragraph>
       </Box>
     </Box>
   );

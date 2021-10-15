@@ -1,11 +1,12 @@
-import React, { memo } from "react";
+import React from "react";
 import ProfileCard from "../components/ProfileCard";
 import TimeCard from "../components/TimeCard";
-import { Grid, Box, Paragraph } from "theme-ui";
+import { Grid, Box } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
-
 const IndexPage = () => {
+  const [frequency, setFrequency] = React.useState("daily");
+  const value = { frequency, setFrequency };
   const data = useStaticQuery(graphql`
     {
       allDataJson {
@@ -29,10 +30,12 @@ const IndexPage = () => {
         }
       }
     }
-  `)
+  `);
+  const cardData = data.allDataJson.nodes;
 
-const cardData = data.allDataJson.nodes
-
+  // React.useEffect(() => {
+  //   console.log('frequency updated', frequency)
+  // }, [frequency]);
 
   return (
     <Grid
@@ -41,6 +44,7 @@ const cardData = data.allDataJson.nodes
       }}
     >
       <ProfileCard
+        value={value}
         sx={{
           gridColumn: 1 / 2,
           gridRow: 1,
@@ -52,14 +56,14 @@ const cardData = data.allDataJson.nodes
           gridRow: ["2", "1"],
         }}
       ></Box>
-     
-      
+
       {cardData.map((card, index) => (
         <TimeCard
           index={index}
           key={card.id}
           title={card.title}
           timeframes={card.timeframes}
+          value={value}
         />
       ))}
 
@@ -72,6 +76,6 @@ const cardData = data.allDataJson.nodes
       </div> */}
     </Grid>
   );
-}
+};
 
 export default IndexPage;
