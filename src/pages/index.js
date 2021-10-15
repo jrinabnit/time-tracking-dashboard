@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "../index.css";
 import ProfileCard from "../components/ProfileCard";
 import TimeCard from "../components/TimeCard";
-import { Grid, Box } from "theme-ui";
+import { Grid } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
 const IndexPage = () => {
@@ -33,29 +34,22 @@ const IndexPage = () => {
   `);
   const cardData = data.allDataJson.nodes;
 
-  // React.useEffect(() => {
-  //   console.log('frequency updated', frequency)
-  // }, [frequency]);
-
   return (
     <Grid
       sx={{
-        gridTemplateColumns: [350, 250],
+        gap: "20px",
+        // gridTemplateColumns: [350, 300],
+        gridTemplateColumns: "repeat(4, 350px)",
+        gridTemplateRows: "repeat(2, 250px)",
       }}
     >
       <ProfileCard
         value={value}
         sx={{
           gridColumn: 1 / 2,
-          gridRow: 1,
+          gridRow: "1 / span 2",
         }}
       />
-      <Box
-        sx={{
-          gridColumn: ["1", "2"],
-          gridRow: ["2", "1"],
-        }}
-      ></Box>
 
       {cardData.map((card, index) => (
         <TimeCard

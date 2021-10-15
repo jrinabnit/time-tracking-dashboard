@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../index.css";
 import { Heading, Paragraph, Box, Image } from "theme-ui";
 import Ellipsis from "../assets/svgs/icon-ellipsis.svg";
 import WorkImg from "../assets/svgs/icon-work.svg";
@@ -9,60 +8,54 @@ import ExerciseImg from "../assets/svgs/icon-exercise.svg";
 import SocialImg from "../assets/svgs/icon-social.svg";
 import SelfCareImg from "../assets/svgs/icon-self-care.svg";
 
+const TimeCard = ({ title, timeframes, index, value: { frequency } }) => {
+  const styles = [
+    {
+      bg: "red100",
+      src: WorkImg,
+    },
+    {
+      bg: "blue600",
+      src: PlayImg,
+    },
+    {
+      bg: "red200",
+      src: StudyImg,
+    },
+    {
+      bg: "green100",
+      src: ExerciseImg,
+    },
+    {
+      bg: "violet100",
+      src: SocialImg,
+    },
+    {
+      bg: "orange100",
+      src: SelfCareImg,
+    },
+  ];
 
-const TimeCard = ( {title, timeframes, index, value: {frequency}}) => {
-
-const styles = [
-  {
-    bg: "red100",
-    src: WorkImg,
-  },
-  {
-    bg: "blue600",
-    src: PlayImg,
-  },
-  {
-    bg: "red200",
-    src: StudyImg,
-  },
-  {
-    bg: "green100",
-    src: ExerciseImg,
-  },
-  {
-    bg: "violet100",
-    src: SocialImg,
-  },
-  {
-    bg: "orange100",
-    src: SelfCareImg,
-  },
-]
-
-const dailyCurr = timeframes.daily.current
-const weeklyCurr = timeframes.weekly.current
-const monthlyCurr = timeframes.monthly.current
-const dailyPrev = timeframes.daily.previous
-const weeklyPrev = timeframes.weekly.previous
-const monthlyPrev = timeframes.monthly.previous
+  const dailyCurr = timeframes.daily.current;
+  const weeklyCurr = timeframes.weekly.current;
+  const monthlyCurr = timeframes.monthly.current;
+  const dailyPrev = timeframes.daily.previous;
+  const weeklyPrev = timeframes.weekly.previous;
+  const monthlyPrev = timeframes.monthly.previous;
 
   return (
     <Box
       sx={{
         borderRadius: "12px",
-        minWidth: ["250px"],
-        maxHeight: ["250px"],
         ...styles[index],
       }}
     >
       <Image
-        src= {styles[index].src}
-        a={console.log(styles[0].src)}
+        src={styles[index].src}
         sx={{
+          height: 90,
           pl: "70%",
-          mb: "-15%",
         }}
-        
       />
       <Box
         sx={{
@@ -70,19 +63,27 @@ const monthlyPrev = timeframes.monthly.previous
           zIndex: 0,
           bg: "blue300",
           borderRadius: "12px",
-          mt: 30,
-          alignSelf: "end",
+          mt: -30,
+          alignSelf: "end", 
         }}
       >
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            p: 20,
+            alignItems: "center",
+            px: 30,
+            pt: 40,
           }}
         >
           <Heading variant="heading2">{title}</Heading>
-          <Image src={Ellipsis} alt="ellipsis" />
+          <Image
+            src={Ellipsis}
+            alt="ellipsis"
+            sx={{
+              height: 5,
+            }}
+          />
         </Box>
 
         <Box
@@ -90,21 +91,24 @@ const monthlyPrev = timeframes.monthly.previous
             display: "flex",
             flexDirection: ["row", "column"],
             justifyContent: "space-between",
-            p: 20,
+            alignItems: ["end", 'start'],
+            px: 30,
+            pt: [10, 20],
+            pb: 30,
           }}
         >
           <Heading variant="heading1">
-          {frequency === 'daily' && dailyCurr}
-          {frequency === 'weekly' && weeklyCurr}
-          {frequency === 'monthly' && monthlyCurr}hrs
+            {frequency === "daily" && dailyCurr}
+            {frequency === "weekly" && weeklyCurr}
+            {frequency === "monthly" && monthlyCurr} hrs
           </Heading>
           <Paragraph>
-          {frequency === 'daily' && 'Yesterday'}
-          {frequency === 'weekly' && 'Last Week'}
-          {frequency === 'monthly' && 'Last Month'}
-          {' '} - {' '} {frequency === 'daily' && dailyPrev}
-          {frequency === 'weekly' && weeklyPrev}
-          {frequency === 'monthly' && monthlyPrev}hrs
+            {frequency === "daily" && "Yesterday"}
+            {frequency === "weekly" && "Last Week"}
+            {frequency === "monthly" && "Last Month"} -{" "}
+            {frequency === "daily" && dailyPrev}
+            {frequency === "weekly" && weeklyPrev}
+            {frequency === "monthly" && monthlyPrev}hrs
           </Paragraph>
         </Box>
       </Box>

@@ -28,10 +28,20 @@ const theme = {
     paragraph: {
       fontSize: [18],
       color: 'blue500',
+    },
+    frequency: {
+      fontSize: [18],
+      my: 2,
+      color: 'blue500',
       ':hover': {
+        cursor: 'pointer',
         color: '#FFFFFF',
-        transform: 'scale(1.2)'
-      }
+        transform: 'scale(1.2) transitionX(5px)'
+      },
+      // ':active': {
+      //   color: '#FFFFFF',
+      //   transform: 'scale(1.2)'
+      // },
     },
   },
   colors: {

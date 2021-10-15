@@ -1,29 +1,21 @@
 import React from "react";
-import styles from "../index.css";
 import { Heading, Paragraph, Box, Image } from "theme-ui";
 import ProfilePic from "../assets/image-jeremy.png";
 
-
-
-
-
 const ProfileCard = ({ value: { frequency, setFrequency } }) => {
-
-function handleChange(){
-
-
-}
-
-
-
-
+  
+  // const dailyRef= React.useRef(null)
+  // function handleChange(ref) {
+  //     console.log(ref.current)
+  //     ref.current.className = 'active'
+  //     console.log(ref.current.className)
+  // }
 
   return (
     <Box
-      a={console.log(setFrequency)}
       sx={{
         bg: "blue300",
-        maxWidth: ["350px", "250px"],
+        // maxWidth: ["350px", "250px"],
         borderRadius: "16px",
       }}
     >
@@ -42,7 +34,8 @@ function handleChange(){
             border: "2px solid white",
             width: "80px",
             height: "auto",
-            m: [20, 30],
+            mx: 30, 
+            my: 30,
           }}
         />
         <Box
@@ -50,12 +43,12 @@ function handleChange(){
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            my: 20,
+            // my: 20,
           }}
         >
           <Paragraph
             sx={{
-              mx: [10, 30],
+              mx: [0, 30],
             }}
           >
             Report for
@@ -63,8 +56,8 @@ function handleChange(){
           <Heading
             variant="heading2"
             sx={{
-              mx: [10, 30],
-              mb: [0, 40],
+              mx: [0, 30],
+              pb: [0, 100],
             }}
           >
             Jeremy Robson
@@ -75,21 +68,21 @@ function handleChange(){
         sx={{
           display: "flex",
           flexDirection: ["row", "column"],
-          justifyContent: "space-evenly",
-          m: 30,
+          justifyContent: "space-between",
+          my: 20,
+          mx: 30,
+          '.active' : {
+            color: '#FFFFFF',
+          }
         }}
       >
-        <Paragraph 
-          sx={{ 
-            my: 2,
-    
-         }} onClick={() => setFrequency("daily")}>
+        <Paragraph variant='frequency' onClick={() => setFrequency("daily")}>
           Daily
         </Paragraph>
-        <Paragraph sx={{ my: 2 }} onClick={() => setFrequency("weekly")}>
+        <Paragraph variant='frequency' onClick={() => setFrequency("weekly")}>
           Weekly
         </Paragraph>
-        <Paragraph sx={{ my: 2 }} onClick={() => setFrequency("monthly")}>
+        <Paragraph  variant='frequency' onClick={() => setFrequency("monthly")}>
           Monthly
         </Paragraph>
       </Box>
