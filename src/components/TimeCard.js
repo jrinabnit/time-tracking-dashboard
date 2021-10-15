@@ -64,7 +64,7 @@ const TimeCard = ({ title, timeframes, index, value: { frequency } }) => {
           bg: "blue300",
           borderRadius: "12px",
           mt: -30,
-          alignSelf: "end", 
+          alignSelf: "end",
         }}
       >
         <Box
@@ -76,7 +76,7 @@ const TimeCard = ({ title, timeframes, index, value: { frequency } }) => {
             pt: 40,
           }}
         >
-          <Heading variant="heading2">{title}</Heading>
+          <Heading variant="heading3">{title}</Heading>
           <Image
             src={Ellipsis}
             alt="ellipsis"
@@ -91,10 +91,10 @@ const TimeCard = ({ title, timeframes, index, value: { frequency } }) => {
             display: "flex",
             flexDirection: ["row", "column"],
             justifyContent: "space-between",
-            alignItems: ["end", 'start'],
+            alignItems: ["end", "start"],
             px: 30,
             pt: [10, 20],
-            pb: 30,
+            pb: 40,
           }}
         >
           <Heading variant="heading1">

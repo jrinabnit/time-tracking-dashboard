@@ -39,8 +39,8 @@ const IndexPage = () => {
       sx={{
         gap: "20px",
         // gridTemplateColumns: [350, 300],
-        gridTemplateColumns: "repeat(4, 350px)",
-        gridTemplateRows: "repeat(2, 250px)",
+        gridTemplateColumns: ["1, 350px", "repeat(4, 350px)"],
+        gridTemplateRows: [  , "repeat(2, 250px)"],
       }}
     >
       <ProfileCard

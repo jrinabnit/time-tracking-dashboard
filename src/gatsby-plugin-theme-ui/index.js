@@ -6,18 +6,18 @@ const theme = {
     monospace: "Menlo, monospace",
   },
   fontWeights: {
-      body: 300,
-      heading: 300,
-      bold: 700,
-    },
-    lineHeights: {
-      body: 1.5,
-      heading: 1.125,
-    },
-    letterSpacings: {
-      body: "normal",
-      caps: "0.2em",
-    },
+    body: 300,
+    heading: 300,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+  letterSpacings: {
+    body: "normal",
+    caps: "0.2em",
+  },
   text: {
     heading1: {
       fontSize: 36,
@@ -25,18 +25,22 @@ const theme = {
     heading2: {
       fontSize: [26, 36],
     },
+    heading3: {
+      fontSize: [22, 22],
+      fontWeight: 700,
+    },
     paragraph: {
       fontSize: [18],
-      color: 'blue500',
+      color: "blue500",
     },
     frequency: {
       fontSize: [18],
       my: 2,
-      color: 'blue500',
-      ':hover': {
-        cursor: 'pointer',
-        color: '#FFFFFF',
-        transform: 'scale(1.2) transitionX(5px)'
+      color: "blue500",
+      ":hover": {
+        cursor: "pointer",
+        color: "#FFFFFF",
+        transform: "scale(1.2) transitionX(5px)",
       },
       // ':active': {
       //   color: '#FFFFFF',
