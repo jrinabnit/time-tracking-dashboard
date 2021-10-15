@@ -96,7 +96,7 @@ const monthlyPrev = timeframes.monthly.previous
           <Heading variant="heading1">
           {frequency === 'daily' && dailyCurr}
           {frequency === 'weekly' && weeklyCurr}
-          {frequency === 'monthly' && monthlyCurr}
+          {frequency === 'monthly' && monthlyCurr}hrs
           </Heading>
           <Paragraph>
           {frequency === 'daily' && 'Yesterday'}
@@ -104,7 +104,7 @@ const monthlyPrev = timeframes.monthly.previous
           {frequency === 'monthly' && 'Last Month'}
           {' '} - {' '} {frequency === 'daily' && dailyPrev}
           {frequency === 'weekly' && weeklyPrev}
-          {frequency === 'monthly' && monthlyPrev}
+          {frequency === 'monthly' && monthlyPrev}hrs
           </Paragraph>
         </Box>
       </Box>

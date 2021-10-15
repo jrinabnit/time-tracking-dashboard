@@ -27,6 +27,11 @@ const theme = {
     },
     paragraph: {
       fontSize: [18],
+      color: 'blue500',
+      ':hover': {
+        color: '#FFFFFF',
+        transform: 'scale(1.2)'
+      }
     },
   },
   colors: {
