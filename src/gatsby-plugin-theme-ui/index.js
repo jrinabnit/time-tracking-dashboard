@@ -43,6 +43,16 @@ const theme = {
         transform: "scale(1.2) transitionX(5px)",
       },
     },
+    active: {
+      fontSize: [18],
+      my: 2,
+      color: "text",
+      ":hover": {
+        cursor: "pointer",
+        color: "#FFFFFF",
+        transform: "scale(1.2) transitionX(5px)",
+      },
+    },
   },
   colors: {
     text: "#EEEEEE",

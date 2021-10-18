@@ -3,6 +3,15 @@ import { Heading, Paragraph, Box, Image } from "theme-ui";
 import ProfilePic from "../assets/image-jeremy.png";
 
 const ProfileCard = ({ value: { frequency, setFrequency } }) => {
+  const [active, setActive] = React.useState("daily");
+  const activeValue = { active, setActive };
+
+  const frequencyOptions = [
+    { period: "Daily", value: "daily" },
+    { period: "Weekly", value: "weekly" },
+    { period: "Monthly", value: "monthly" },
+  ];
+
   return (
     <Box
       sx={{
@@ -71,15 +80,15 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => {
           },
         }}
       >
-        <Paragraph variant="frequency" onClick={() => setFrequency("daily")}>
-          Daily
-        </Paragraph>
-        <Paragraph variant="frequency" onClick={() => setFrequency("weekly")}>
-          Weekly
-        </Paragraph>
-        <Paragraph variant="frequency" onClick={() => setFrequency("monthly")}>
-          Monthly
-        </Paragraph>
+        {frequencyOptions.map((option, index) => (
+          <FrequencySelector
+            key={option.id}
+            frequencyOption={option.period}
+            frequencyValue={option.value}
+            setFrequency={setFrequency}
+            frequency={frequency}
+          />
+        ))}
       </Box>
     </Box>
   );
@@ -87,8 +96,16 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => {
 
 export default ProfileCard;
 
-// const FrequencySelector({ frequency }) {
-//   <Paragraph className={isActive ? 'active' : null} variant="frequency" onClick={() => setFrequency("daily")}>
-//           Daily
-//   </Paragraph>
-// }
+const FrequencySelector = ({
+  frequency,
+  setFrequency,
+  frequencyOption,
+  frequencyValue,
+}) => (
+  <Paragraph
+    variant={frequencyValue === frequency ? "active" : "frequency"}
+    onClick={() => setFrequency(frequencyValue)}
+  >
+    {frequencyOption}
+  </Paragraph>
+);
