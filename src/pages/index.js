@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../index.css";
 import ProfileCard from "../components/ProfileCard";
 import TimeCard from "../components/TimeCard";
-import { Grid } from "theme-ui";
+import { Grid, Box } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
 const IndexPage = () => {
@@ -38,17 +38,12 @@ const IndexPage = () => {
     <Grid
       sx={{
         gap: "20px",
-        // gridTemplateColumns: [350, 300],
-        gridTemplateColumns: ["1, 350px", "repeat(4, 350px)"],
-        gridTemplateRows: [  , "repeat(2, 250px)"],
+        gridTemplateColumns: ["1, 300px", "repeat(4, 350px)"],
+        gridTemplateRows: [ null, "repeat(2, 250px)"],
       }}
     >
       <ProfileCard
         value={value}
-        sx={{
-          gridColumn: 1 / 2,
-          gridRow: "1 / span 2",
-        }}
       />
 
       {cardData.map((card, index) => (
@@ -61,13 +56,12 @@ const IndexPage = () => {
         />
       ))}
 
-      {/* <div class="attribution">
+      <Box sx={{ color: '#000'}} >
         Challenge by{" "}
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
           Frontend Mentor
         </a>
-        . Coded by <a href="#">Your Name Here</a>.
-      </div> */}
+        . Coded by Jeremy Inabnit</Box>.
     </Grid>
   );
 };

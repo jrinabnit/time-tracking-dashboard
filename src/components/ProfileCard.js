@@ -3,19 +3,12 @@ import { Heading, Paragraph, Box, Image } from "theme-ui";
 import ProfilePic from "../assets/image-jeremy.png";
 
 const ProfileCard = ({ value: { frequency, setFrequency } }) => {
-  
-  // const dailyRef= React.useRef(null)
-  // function handleChange(ref) {
-  //     console.log(ref.current)
-  //     ref.current.className = 'active'
-  //     console.log(ref.current.className)
-  // }
-
   return (
     <Box
       sx={{
+        gridColumn: "1 / 2",
+        gridRow: "span 2",
         bg: "blue300",
-        // maxWidth: ["350px", "250px"],
         borderRadius: "16px",
       }}
     >
@@ -34,7 +27,7 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => {
             border: "2px solid white",
             width: "80px",
             height: "auto",
-            mx: 30, 
+            mx: 30,
             my: 30,
           }}
         />
@@ -43,7 +36,6 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            // my: 20,
           }}
         >
           <Paragraph
@@ -71,23 +63,31 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => {
           justifyContent: "space-between",
           my: 20,
           mx: 30,
-          '.active' : {
-            color: '#FFFFFF',
-          }
+          ".active": {
+            color: "#FFFFFF",
+          },
         }}
       >
-        <Paragraph variant='frequency' onClick={() => setFrequency("daily")}>
+        <Paragraph variant="frequency" onClick={() => setFrequency("daily")}>
           Daily
         </Paragraph>
-        <Paragraph variant='frequency' onClick={() => setFrequency("weekly")}>
+        <Paragraph variant="frequency" onClick={() => setFrequency("weekly")}>
           Weekly
         </Paragraph>
-        <Paragraph  variant='frequency' onClick={() => setFrequency("monthly")}>
+        <Paragraph variant="frequency" onClick={() => setFrequency("monthly")}>
           Monthly
         </Paragraph>
+
       </Box>
     </Box>
   );
 };
-
+ 
 export default ProfileCard;
+
+
+// const FrequencySelector({ frequency }) {
+//   <Paragraph {} variant="frequency" onClick={() => setFrequency("daily")}>
+//           Daily
+//   </Paragraph>
+// }
