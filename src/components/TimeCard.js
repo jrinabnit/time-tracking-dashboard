@@ -8,7 +8,13 @@ import ExerciseImg from "../assets/svgs/icon-exercise.svg";
 import SocialImg from "../assets/svgs/icon-social.svg";
 import SelfCareImg from "../assets/svgs/icon-self-care.svg";
 
-const TimeCard = ({ title, timeframes, index, value: { frequency } }) => {
+const TimeCard = ({
+  title,
+  current,
+  previous,
+  index,
+  value: { frequency },
+}) => {
   const styles = [
     {
       bg: "red100",
@@ -36,12 +42,11 @@ const TimeCard = ({ title, timeframes, index, value: { frequency } }) => {
     },
   ];
 
-  const dailyCurr = timeframes.daily.current;
-  const weeklyCurr = timeframes.weekly.current;
-  const monthlyCurr = timeframes.monthly.current;
-  const dailyPrev = timeframes.daily.previous;
-  const weeklyPrev = timeframes.weekly.previous;
-  const monthlyPrev = timeframes.monthly.previous;
+  const prevPeriod = {
+    daily: "Yesterday",
+    weekly: "Last Week",
+    monthly: "Last Month",
+  };
 
   return (
     <Box
@@ -98,17 +103,12 @@ const TimeCard = ({ title, timeframes, index, value: { frequency } }) => {
           }}
         >
           <Heading variant="heading1">
-            {frequency === "daily" && dailyCurr}
-            {frequency === "weekly" && weeklyCurr}
-            {frequency === "monthly" && monthlyCurr} hrs
+            {current} {current > 1 ? "hrs" : "hr"}
           </Heading>
+
           <Paragraph>
-            {frequency === "daily" && "Yesterday"}
-            {frequency === "weekly" && "Last Week"}
-            {frequency === "monthly" && "Last Month"} -{" "}
-            {frequency === "daily" && dailyPrev}
-            {frequency === "weekly" && weeklyPrev}
-            {frequency === "monthly" && monthlyPrev}hrs
+            {prevPeriod[frequency]} - {previous}
+            {previous > 1 ? "hrs" : "hr"}
           </Paragraph>
         </Box>
       </Box>

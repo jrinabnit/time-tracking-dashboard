@@ -10,6 +10,9 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => {
         gridRow: "span 2",
         bg: "blue300",
         borderRadius: "16px",
+        ".active": {
+          color: "#FFFFFF",
+        },
       }}
     >
       <Box
@@ -77,17 +80,15 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => {
         <Paragraph variant="frequency" onClick={() => setFrequency("monthly")}>
           Monthly
         </Paragraph>
-
       </Box>
     </Box>
   );
 };
- 
+
 export default ProfileCard;
 
-
 // const FrequencySelector({ frequency }) {
-//   <Paragraph {} variant="frequency" onClick={() => setFrequency("daily")}>
+//   <Paragraph className={isActive ? 'active' : null} variant="frequency" onClick={() => setFrequency("daily")}>
 //           Daily
 //   </Paragraph>
 // }

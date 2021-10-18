@@ -42,10 +42,6 @@ const theme = {
         color: "#FFFFFF",
         transform: "scale(1.2) transitionX(5px)",
       },
-      // ':active': {
-      //   color: '#FFFFFF',
-      //   transform: 'scale(1.2)'
-      // },
     },
   },
   colors: {
