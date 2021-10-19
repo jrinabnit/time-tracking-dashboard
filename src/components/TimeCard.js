@@ -52,6 +52,7 @@ const TimeCard = ({
     <Box
       sx={{
         borderRadius: "12px",
+        letterSpacing: "body",
         ...styles[index],
       }}
     >

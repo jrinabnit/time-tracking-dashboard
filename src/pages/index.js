@@ -36,15 +36,6 @@ const IndexPage = () => {
 
   const cardData = data.allDataJson.nodes;
 
-  //Return a new array of objects from the map, now called cardData.
-  // const cardData = data.allDataJson.nodes.map((card, index) => {
-  //   return {
-  //     id: card.id,
-  //     title: card.title,
-  //     current: card.timeframes.daily,
-  //   };
-  // });
-
   return (
     <Grid
       sx={{
@@ -66,7 +57,7 @@ const IndexPage = () => {
       ))}
       <Box sx={{ color: "#000" }}>
         Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        <a href="https://www.frontendmentor.io?ref=challenge" >
           Frontend Mentor
         </a>
         . Coded by Jeremy Inabnit

@@ -1,4 +1,7 @@
+import { elements } from "./elements";
+
 const theme = {
+  ...elements,
   breakpoints: ["@media (min-width: 400px)"],
   fonts: {
     body: "Rubik",
@@ -54,6 +57,7 @@ const theme = {
       },
     },
   },
+
   colors: {
     text: "#EEEEEE",
 
