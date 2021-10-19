@@ -1,7 +1,4 @@
-import { elements } from "./elements";
-
 const theme = {
-  ...elements,
   breakpoints: ["@media (min-width: 400px)"],
   fonts: {
     body: "Rubik",
@@ -57,7 +54,14 @@ const theme = {
       },
     },
   },
-
+  cards: {
+    primary: {
+      borderRadius: 16,
+    },
+  },
+  radii: {
+    cards: 16, 
+  }, 
   colors: {
     text: "#EEEEEE",
 

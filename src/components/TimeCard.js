@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Paragraph, Box, Image } from "theme-ui";
+import { Heading, Paragraph, Box, Image, Card } from "theme-ui";
 import Ellipsis from "../assets/svgs/icon-ellipsis.svg";
 import WorkImg from "../assets/svgs/icon-work.svg";
 import PlayImg from "../assets/svgs/icon-play.svg";
@@ -49,9 +49,8 @@ const TimeCard = ({
   };
 
   return (
-    <Box
+    <Card
       sx={{
-        borderRadius: "12px",
         letterSpacing: "body",
         ...styles[index],
       }}
@@ -63,12 +62,10 @@ const TimeCard = ({
           pl: "70%",
         }}
       />
-      <Box
+      <Card
         sx={{
           position: "relative",
-          zIndex: 0,
           bg: "blue300",
-          borderRadius: "12px",
           mt: -30,
           alignSelf: "end",
         }}
@@ -112,8 +109,8 @@ const TimeCard = ({
             {previous > 1 ? "hrs" : "hr"}
           </Paragraph>
         </Box>
-      </Box>
-    </Box>
+      </Card>
+    </Card>
   );
 };
 

@@ -1,25 +1,23 @@
 import React from "react";
-import { Heading, Paragraph, Box, Image } from "theme-ui";
+import { Heading, Paragraph, Box, Image, Card } from "theme-ui";
 import ProfilePic from "../assets/image-jeremy.png";
 
 const ProfileCard = ({ value: { frequency, setFrequency } }) => (
-  <Box
+  <Card
     sx={{
       gridColumn: "1 / 2",
       gridRow: "span 2",
       bg: "blue300",
-      borderRadius: "16px",
       ".active": {
         color: "#FFFFFF",
       },
     }}
   >
-    <Box
+    <Card
       sx={{
         display: "flex",
         flexDirection: ["row", "column"],
         bg: "blue100",
-        borderRadius: "16px",
       }}
     >
       <Image
@@ -57,7 +55,7 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => (
           Jeremy Robson
         </Heading>
       </Box>
-    </Box>
+    </Card>
     <Box
       sx={{
         display: "flex",
@@ -86,7 +84,7 @@ const ProfileCard = ({ value: { frequency, setFrequency } }) => (
         frequency={frequency}
       />
     </Box>
-  </Box>
+  </Card>
 );
 
 export default ProfileCard;
